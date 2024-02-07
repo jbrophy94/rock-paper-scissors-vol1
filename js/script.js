@@ -69,8 +69,6 @@ function checkWinner(playerChoice, computerChoice){
 function playSingleRound(){
   let validInput = false;
   let playerSelection;
-  //This input validation works but for some reason the console.log() message still runs even
-  //When I wouldn't expect the loop for input validation top have exited.
   do{
     playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
     if(playerSelection === "rock"||playerSelection === "paper"||playerSelection === "scissors"){
