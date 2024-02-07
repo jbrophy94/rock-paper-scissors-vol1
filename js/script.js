@@ -61,7 +61,8 @@ function checkWinner(playerChoice, computerChoice){
 function playSingleRound(){
   let validInput = false;
   let playerSelection;
-
+  //This input validation works but for some reason the console.log() message still runs even
+  //When I wouldn't expect the loop for input validation top have exited.
   do{
     playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
     if(playerSelection === "rock"||playerSelection === "paper"||playerSelection === "scissors"){
@@ -112,6 +113,25 @@ function playSeries(){
   //if they want to play again, keep keepGoing as true
   //if they don't want to play again, exit loop and say good bye. 
 
-playSeries()
+function playRockPaperScissors(){
+  let keepGoing = true;
+  while(keepGoing === true){
+    playSeries()
+    let validInput = false;
+    while(validInput === false){
+      let playAgain = prompt("Play aganin (y/n)?").toLowerCase();
+      if (playAgain === "n"){
+          validInput = true;
+          keepGoing = false;
+      } else if(playAgain === "y"){
+        validInput = true; 
+        console.clear()
+      }
+    }
+  }
+  alert("Thanks for playing! Goodbye!")
+}
+
+playRockPaperScissors()
 
 
