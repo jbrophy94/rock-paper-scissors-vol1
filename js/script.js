@@ -61,7 +61,7 @@ function checkWinner(playerChoice, computerChoice){
 function playSingleRound(){
   const playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
   const computerSelection = getComputerChoice();
-  console.log(`${checkWinner(playerSelection, computerSelection)} wins. Computer selected ${computerSelection}\nplayer: ${winCounts.player}\ncomputer: ${winCounts.computer}`);
+  console.log(`${checkWinner(playerSelection, computerSelection)} wins. Computer selected ${computerSelection}`);
   return checkWinner(playerSelection, computerSelection)
 }
 
@@ -80,6 +80,7 @@ function playSeries(){
     let winner = playSingleRound();
     if (winner === "player") ++winCounts.player
     if (winner === "computer") ++winCounts.computer
+    console.log(`\nplayer: ${winCounts.player}\ncomputer: ${winCounts.computer}`);
   }
   if (winCounts.player === 3) console.log(`You win the series ${winCounts.player} to ${winCounts.computer}!`);
   else if (winCounts.computer ===3) console.log(`The computer wins the series ${winCounts.computer} to ${winCounts.player}`);
