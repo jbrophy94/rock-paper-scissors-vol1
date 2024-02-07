@@ -55,12 +55,37 @@ function checkWinner(playerChoice, computerChoice){
   //Ask for user input to store inside playerSelection
     //Make user input lowercase wtih toLowerCase() method
     //validate user input
-  //Determine computer choice with getComputerChoice and store in computerSelection
-  //store playerSelection and computerSelection in 2 element array.
-    //The playerSelection should be index 0 and the computerSelecitoin index 1.
+  //Use getComputerChoice to store in computerSelection
+  //return checkWinner(playerSelection, computerSelection)
 
-console.log(checkWinner("scissors","paper"));
-  
+function playSingleRound(){
+  const playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
+  const computerSelection = getComputerChoice();
+  console.log(`${checkWinner(playerSelection, computerSelection)} wins. Computer selected ${computerSelection}\nplayer: ${winCounts.player}\ncomputer: ${winCounts.computer}`);
+  return checkWinner(playerSelection, computerSelection)
+}
 
+//Create game loop that will track wins in winCounts object
+//While neither player has won 3 games yet
+  //store playSingleRound() in winner variable
+  //if winner is "player" then increment winCounts.player
+  //if winner is "computer" then increment winCounts.computer
+//End while loop
+//If player has won 3 games, print "You win the Series!"
+//If the computer haswon 3 games, print "The computer has won the series"
+//Set both win counts in the winCounts object back to 0. 
+
+function playSeries(){
+  while(winCounts.player < 3 && winCounts.computer < 3){
+    let winner = playSingleRound();
+    if (winner === "player") ++winCounts.player
+    if (winner === "computer") ++winCounts.computer
+  }
+  if (winCounts.player === 3) console.log(`You win the series ${winCounts.player} to ${winCounts.computer}!`);
+  else if (winCounts.computer ===3) console.log(`The computer wins the series ${winCounts.computer} to ${winCounts.player}`);
+  winCounts.player = winCounts.computer = 0;
+}
+
+playSeries()
 
 
