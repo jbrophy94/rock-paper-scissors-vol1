@@ -1,9 +1,7 @@
 'use strict'
 
 //The only global variable in this game is the winCounts object.
-//Only 2 functions are actually called in the global context of this script. They are:
-  //alert (see directly below)
-  //playRockPaperScissors
+//The Only function that is actually called in the global context of this script is playRockPaperScissors.
   //functions and the scopes in which they are called are:
     //getComputerChoice--scope called: playSingleRound (as input to checkWinner function)
     //checkWinner--scope called: playSingleRound (to determine the winner of the round)
@@ -11,11 +9,8 @@
     //playSeries--scope called: playRockPaperScissors (loops until best of 5 series is completed)
     //playRockPaperScissors--scope: global (calls playSeries until user opts out of playing again)
 
-//Welcome the user to the game by printing to the console
-alert("Welcome to Rock Paper Scissors! This is a simple console game so please open up the developer tools!")
-
 //create object with 2 properties: playerWinCount and computer winCount
-const winCounts = {player:0, computer:0}
+const winCounts = {player:0, computer:0};
 
 //Create getComputerChoice function
   //Create array of choices
@@ -127,6 +122,8 @@ function playSeries(){
   //if they don't want to play again, exit loop and say good bye. 
 
 function playRockPaperScissors(){
+  //Welcome the user to the game by printing to the console
+  alert("Welcome to Rock Paper Scissors! This is a simple console game so please open up the developer tools!")
   let keepGoing = true;
   while(keepGoing === true){
     playSeries()

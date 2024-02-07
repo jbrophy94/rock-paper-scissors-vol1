@@ -7,9 +7,7 @@ This is set up as a best of 5 series (first to 3 wins). At the end of each serie
 the program will prompt the user on whether they would like to play again or not. There is no GUI at all for this version of the game. The entire game is played using prompts, alerts, and the console (the console is where you will see the majority of output, including the results of games and series).
 
 The only global variable in this game is the winCounts object.
-Only 2 functions are actually called in the global context of this script. They are:
-  -alert (see directly below)
-  -playRockPaperScissors
+The Only function that is actually called in the global context of this script is playRockPaperScissors.
   -functions and the scopes in which they are called are:
     -getComputerChoice--scope called: playSingleRound (as input to checkWinner function)
     -checkWinner--scope called: playSingleRound (to determine the winner of the round)
