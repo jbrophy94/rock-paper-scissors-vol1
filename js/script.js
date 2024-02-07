@@ -40,8 +40,8 @@ function checkWinner(playerChoice, computerChoice){
   const playersArray = ["player","computer"]
 
   let winningChoice;
-  if(choicesArray.includes("scissors")&&choicesArray.includes("rock")) winningChoice = "rock";
-  else if(choicesArray.includes("scissors") && choicesArray.includes("paper")) winningChoice = "paper";
+  if(choicesArray.includes("scissors") && choicesArray.includes("rock")) winningChoice = "rock";
+  else if(choicesArray.includes("scissors") && choicesArray.includes("paper")) winningChoice = "scissors";
   else if (choicesArray.includes("rock")&&choicesArray.includes("paper")) winningChoice = "paper";
   else if (choicesArray[0] === choicesArray[1]) return "tie"
   
