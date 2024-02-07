@@ -11,6 +11,6 @@ The Only function that is actually called in the global context of this script i
   -functions and the scopes in which they are called are:
     -getComputerChoice--scope called: playSingleRound (as input to checkWinner function)
     -checkWinner--scope called: playSingleRound (to determine the winner of the round)
-    -playSingleRound--scope called: playSeries (playSeries adds input functionality for playerSelection and calls getComputerChoice for      computerSelection)
+    -playSingleRound--scope called: playSeries (playSingleRound adds input functionality for playerSelection and calls getComputerChoice for computerSelection)
     -playSeries--scope called: playRockPaperScissors (loops until best of 5 series is completed)
     -playRockPaperScissors--scope: global (calls playSeries until user opts out of playing again)
