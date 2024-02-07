@@ -59,7 +59,18 @@ function checkWinner(playerChoice, computerChoice){
   //return checkWinner(playerSelection, computerSelection)
 
 function playSingleRound(){
-  const playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
+  let validInput = false;
+  let playerSelection;
+
+  do{
+    playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
+    if(playerSelection === "rock"||playerSelection === "paper"||playerSelection === "scissors"){
+      validInput = true;
+    } else{
+      alert("Invalid input")
+    }
+    } while (validInput =false)
+
   const computerSelection = getComputerChoice();
   const winner = checkWinner(playerSelection, computerSelection)
   if(winner !== "tie") {
@@ -91,6 +102,15 @@ function playSeries(){
   else if (winCounts.computer ===3) console.log(`The computer wins the series ${winCounts.computer} to ${winCounts.player}`);
   winCounts.player = winCounts.computer = 0;
 }
+
+//Create a function that runs playSeries in a while loop, where the condition to exit is a variable
+//that tracks whether the player wants to play again. Implementation notes below:
+//While keepGoing === true
+  //playSeries()
+  //ask the user if they want to play again
+  //Validate the user input
+  //if they want to play again, keep keepGoing as true
+  //if they don't want to play again, exit loop and say good bye. 
 
 playSeries()
 
