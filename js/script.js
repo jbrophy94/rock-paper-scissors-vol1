@@ -1,3 +1,16 @@
+'use strict'
+
+//The only global variable in this game is the winCounts object.
+//Only 2 functions are actually called in the global context of this script. They are:
+  //alert (see directly below)
+  //playRockPaperScissors
+  //functions and the scopes in which they are called are:
+    //getComputerChoice--scope called: playSingleRound (as input to checkWinner function)
+    //checkWinner--scope called: playSingleRound (to determine the winner of the round)
+    //playSingleRound--scope called: playSeries (playSeries adds input functionality for playerSelection and calls getComputerChoice for computerSelection)
+    //playSeries--scope called: playRockPaperScissors (loops until best of 5 series is completed)
+    //playRockPaperScissors--scope: global (calls playSeries until user opts out of playing again)
+
 //Welcome the user to the game by printing to the console
 alert("Welcome to Rock Paper Scissors! This is a simple console game so please open up the developer tools!")
 
@@ -132,6 +145,7 @@ function playRockPaperScissors(){
   alert("Thanks for playing! Goodbye!")
 }
 
+//This is the only function that will actually run in the global scope as all other functions are lower order compared to playRockPaperScissors().
 playRockPaperScissors()
 
 
