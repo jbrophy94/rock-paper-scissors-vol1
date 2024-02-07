@@ -70,7 +70,7 @@ function playSingleRound(){
     } else{
       alert("Invalid input")
     }
-    } while (validInput =false)
+    } while (validInput === false)
 
   const computerSelection = getComputerChoice();
   const winner = checkWinner(playerSelection, computerSelection)
