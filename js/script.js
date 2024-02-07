@@ -61,8 +61,13 @@ function checkWinner(playerChoice, computerChoice){
 function playSingleRound(){
   const playerSelection = prompt("What is your move (rock, paper, scissors)?").toLowerCase();
   const computerSelection = getComputerChoice();
-  console.log(`${checkWinner(playerSelection, computerSelection)} wins. Computer selected ${computerSelection}`);
-  return checkWinner(playerSelection, computerSelection)
+  const winner = checkWinner(playerSelection, computerSelection)
+  if(winner !== "tie") {
+    console.log(`${checkWinner(playerSelection, computerSelection)} wins. Computer selected ${computerSelection}`);
+  } else{
+    console.log(`Tie. You and the computer both chose ${playerSelection}.`);
+  }
+  return winner;
 }
 
 //Create game loop that will track wins in winCounts object
