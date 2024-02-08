@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.choice-container {
+  display: flex;
+  justify-content: stretch;
+  gap: 30px;
+  flex: 1;
+}
+
+.choice-container button {
+  border-radius: 12px;
+  background-color: magenta;
+  color: lime;
+  flex: 1;
+}
+
+.new-game {
+  border-radius: 12px;
+  background-color: lime;
+  margin-top: 80px;
+}
